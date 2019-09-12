@@ -1,0 +1,42 @@
+{
+  "name": "shogi",
+  "version": "0.1.0",
+  "description": "Shogi test",
+  "main": "index.js",
+  "scripts": {
+    "storybook": "start-storybook -s ./stories/static -p 9001 -c .storybook --ci"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/plugin-proposal-export-default-from": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "@storybook/addon-knobs": "^5.0.11",
+    "@storybook/react": "^5.0.5",
+    "@wirelineio/shogiboardjsx": "~0.1.0",
+    "babel-jest": "^24.7.1",
+    "babel-loader": "^8.0.0",
+    "babel-plugin-add-module-exports": "^1.0.0",
+    "css-loader": "^0.28.11",
+    "dotenv-webpack": "^1.7.0",
+    "eslint-loader": "^2.1.2",
+    "html-webpack-plugin": "^3.2.0",
+    "jest": "^24.7.1",
+    "style-loader": "^0.21.0",
+    "url-loader": "1.0.1",
+    "webpack": "^4.17.1",
+    "webpack-bundle-analyzer": "^3.0.4",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.2.1",
+    "webpack-merge": "^4.2.1",
+    "zip-webpack-plugin": "^3.0.0"
+  },
+  "dependencies": {
+    "shogi.js": "^2.0.1"
+  }
+}
