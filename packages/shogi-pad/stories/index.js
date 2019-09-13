@@ -6,8 +6,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean } from '@storybook/addon-knobs';
 
-// TODO(burdon): Change domain.
-import Shogiboard from '@wirelineio/shogiboardjsx'
+import ShogiPad from './pad';
 
 storiesOf('Components', module)
 
@@ -17,14 +16,10 @@ storiesOf('Components', module)
   // https://storybook.js.org/docs/configurations/options-parameter
   .addParameters({
     options: {
-      panelPosition: 'right'
+      // panelPosition: 'right'
     }
   })
 
   .add('Test', () => {
-    return (
-      <div>
-        <Shogiboard position="start" />
-      </div>
-    );
+    return <ShogiPad/>
   });

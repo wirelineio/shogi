@@ -5,8 +5,8 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Build
-dist/
+# Docusaurus
+website
 
 # Runtime data
 pids
@@ -32,14 +32,14 @@ bower_components
 # node-waf configuration
 .lock-wscript
 
-# Compiled binary addons (https://nodejs.org/api/addons.html)
+# Compiled binary addons (http://nodejs.org/api/addons.html)
 build/Release
 
 # Dependency directories
 node_modules/
 jspm_packages/
 
-# TypeScript v1 declaration files
+# Typescript v1 declaration files
 typings/
 
 # Optional npm cache directory
@@ -53,31 +53,28 @@ typings/
 
 # Output of 'npm pack'
 *.tgz
+package-lock.json
 
 # Yarn Integrity file
 .yarn-integrity
-yarn-error.log
 
 # dotenv environment variables file
 .env
 
-# next.js build output
-.next
-
+# Build artifacts
+dist/
 webpack.zip
+
+.webpack/
+.serverless/
+
+.idea/workspace.xml
 
 .DS_Store
 
-# Idea
-.idea/workspace.xml
+# OpenFaaS Swagger API
+swagger-auto/
 
-# Bot data folder
-packages/bot/data
-packages/simple-bot/data
+truffle/
 
-# Bot megafeed dump folder
-dump/
-
-.yalc
-yalc.lock
-
+packages/megafeed/src/schema.js
