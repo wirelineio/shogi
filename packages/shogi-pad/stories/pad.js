@@ -32,10 +32,12 @@ export default class ShogiPad extends Component {
     // TODO(burdon): Score position: Attack or improve protection.
 
     const moves = game.getMoves();
-    const { from, to } = moves[Math.floor(moves.length * Math.random())];
+    if (moves.length) {
+      const { from, to } = moves[ Math.floor(moves.length * Math.random()) ];
 
-    if (game.move(from, to)) {
-      this.setState({ game });
+      if (game.move(from, to)) {
+        this.setState({ game });
+      }
     }
   };
 

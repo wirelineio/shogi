@@ -20,30 +20,41 @@ function position(square) {
 }
 
 const sfenPiece = {
-  FU: 'P', // Pawn
-  KY: 'L', // Lance
-  KE: 'N', // kNight
-  GI: 'S', // Silver
-  KI: 'G', // Gold
-  KA: 'B', // Bishop
-  HI: 'R', // Rook
-  OU: 'K', // King
+  'FU': 'P',    // Fu       Pawn
+  'KY': 'L',    // Kyu      Lance
+  'KE': 'N',    //          kNight
+  'GI': 'S',    // Gin      Silver
+  'KI': 'G',    // Kin      Gold
+  'KA': 'B',    // Kaku     Bishop
+  'HI': 'R',    // Hisha    Rook
+  'OU': 'K',    // Oo       King
 };
 
 const promoted = {
-  TO: 'FU',
-  NY: 'KY',
-  NK: 'KE',
-  NG: 'GI',
-  UM: 'KA',
-  RY: 'HI',
+  'TO': 'FU',   // Tokin
+  'NY': 'KY',   //
+  'NK': 'KE',   //
+  'NG': 'GI',   //
+  'UM': 'KA',   //
+  'RY': 'HI',   // Ryu      Dragon
+};
+
+const kanji = {
+  'P': '歩',
+  'L': '香',
+  'N': '桂',
+  'S': '銀',
+  'G': '金',
+  'B': '角',
+  'R': '飛',
+  'K': '王',     // 玉
 };
 
 // TODO(burdon): Handle promoted pieces.
 function pieceToSFEN(color, kind) {
   const p = promoted[kind];
   const str = sfenPiece[p || kind];
-  return (p ? '+' : ' ') + ((color === Color.Black) ? str.toLowerCase() : str);
+  return (p ? '+' : ' ') + ((color === Color.Black) ? str : str.toLowerCase());
 }
 
 /**
@@ -69,6 +80,7 @@ export class Shogi {
     return this._game.toSFENString();
   }
 
+  // TODO(burdon): Use kanji and colors? (need fixed width).
   ascii() {
     const board = [];
     for (let i = 0; i < 9; i++) {
@@ -80,7 +92,6 @@ export class Shogi {
         const square = this._game.get(x, y);
         if (square) {
           board[y - 1][9 - x] = pieceToSFEN(square.color, square.kind);
-          // console.log(x, y, square)
         }
       }
     }
