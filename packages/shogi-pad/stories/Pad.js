@@ -9,9 +9,8 @@ import { Shogi } from '@wirelineio/shogi-core';
 // TODO(burdon): Change domain.
 import Shogiboard from '@wirelineio/shogiboardjsx';
 
-export default class ShogiPad extends Component {
+export default class Pad extends Component {
 
-  // TODO(burdon): Board crashes when rendering promoted pieces.
   // TODO(burdon): Doesn't handle captures or drops.
 
   state = {
@@ -21,7 +20,7 @@ export default class ShogiPad extends Component {
   handleDrop = ({ sourceSquare: from, targetSquare: to }) => {
     const { game } = this.state;
 
-    if (game.move(from, to)) {
+    if (game.move({ from, to })) {
       this.setState({ game });
     }
   };
@@ -35,7 +34,7 @@ export default class ShogiPad extends Component {
     if (moves.length) {
       const { from, to } = moves[ Math.floor(moves.length * Math.random()) ];
 
-      if (game.move(from, to)) {
+      if (game.move({ from, to })) {
         this.setState({ game });
       }
     }

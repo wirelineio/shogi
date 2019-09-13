@@ -13,7 +13,7 @@ function position(square) {
     return {
       x: 10 - ('abcdefghi'.indexOf(square[0]) + 1),
       y: 10 - Number(square[1])
-    }
+    };
   } else {
     return square;
   }
@@ -39,6 +39,7 @@ const promoted = {
   'RY': 'HI',   // Ryu      Dragon
 };
 
+/*
 const kanji = {
   'P': '歩',
   'L': '香',
@@ -49,6 +50,7 @@ const kanji = {
   'R': '飛',
   'K': '王',     // 玉
 };
+*/
 
 // TODO(burdon): Handle promoted pieces.
 function pieceToSFEN(color, kind) {
@@ -99,9 +101,9 @@ export class Shogi {
     return board.map(line => line.join(' ')).join('\n');
   }
 
-  move(sourceSquare, targetSquare) {
-    const { x:x1, y:y1 } = position(sourceSquare);
-    const { x:x2, y:y2 } = position(targetSquare);
+  move({ from, to }) {
+    const { x:x1, y:y1 } = position(from);
+    const { x:x2, y:y2 } = position(to);
 
     try {
       this._game.move(x1, y1, x2, y2);
@@ -121,7 +123,7 @@ export class Shogi {
         if (square && square.color === this._game.turn) {
           this._game.getMovesFrom(x, y).forEach(move => {
             moves.push(move);
-          })
+          });
         }
       }
     }
