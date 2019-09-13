@@ -6,13 +6,12 @@ import React, { Component } from 'react';
 
 import { Shogi } from '@wirelineio/shogi-core';
 
-console.log(':::', Shogi)
-
 // TODO(burdon): Change domain.
 import Shogiboard from '@wirelineio/shogiboardjsx';
 
 export default class ShogiPad extends Component {
 
+  // TODO(burdon): Board crashes when rendering promoted pieces.
   // TODO(burdon): Doesn't handle captures or drops.
 
   state = {
@@ -30,6 +29,8 @@ export default class ShogiPad extends Component {
   handleSuggest = () => {
     const { game } = this.state;
 
+    // TODO(burdon): Score position: Attack or improve protection.
+
     const moves = game.getMoves();
     const { from, to } = moves[Math.floor(moves.length * Math.random())];
 
@@ -40,6 +41,9 @@ export default class ShogiPad extends Component {
 
   render() {
     const { game } = this.state;
+
+    console.log('Player:', game.turn ? 'White' : 'Black');
+    console.log(game.ascii());
 
     return (
       <div>
