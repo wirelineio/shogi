@@ -4,7 +4,9 @@
 
 import React, { Component } from 'react';
 
-import Shogi from './lib/shogi';
+import { Shogi } from '@wirelineio/shogi-core';
+
+console.log(':::', Shogi)
 
 // TODO(burdon): Change domain.
 import Shogiboard from '@wirelineio/shogiboardjsx';

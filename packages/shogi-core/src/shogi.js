@@ -22,7 +22,7 @@ function position(square) {
 /**
  * Wrapper.
  */
-export default class Shogi {
+export class Shogi {
 
   _game = new Game();
 
