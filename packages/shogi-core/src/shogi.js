@@ -64,6 +64,8 @@ function position(square) {
  */
 export class Shogi {
 
+  static EMPTY = '9/9/9/9/9/9/9/9/9 b - 1';
+
   static INIT = 'lnsgkgsnl/1r5b1/ppppppppp/9/9/9/PPPPPPPPP/1B5R1/LNSGKGSNL b - 1';
 
   _game = new Game();
@@ -98,7 +100,12 @@ export class Shogi {
       }
     }
 
-    return board.map(line => line.join(' ')).join('\n');
+    // TODO(burdon): Letters or numbers?
+    const rows = board.map((line, i) => '| ' + line.join(' ') + '  | ' + 'abcdefghi'[i]).join('\n');
+
+    return '   9  8  7  6  5  4  3  2  1\n' +
+      '+-----------------------------+\n' + rows +
+      '\n+-----------------------------+';
   }
 
   move({ from, to }) {
