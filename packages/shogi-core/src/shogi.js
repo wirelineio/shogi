@@ -6,19 +6,6 @@
 
 import { Shogi as Game, Color } from 'shogi.js';
 
-function position(square) {
-
-  // TODO(burdon): BUG: shogiboardjsx coordinates are inverted.
-  if (typeof square === 'string') {
-    return {
-      x: 10 - ('abcdefghi'.indexOf(square[0]) + 1),
-      y: 10 - Number(square[1])
-    };
-  } else {
-    return square;
-  }
-}
-
 const sfenPiece = {
   'FU': 'P',    // Fu       Pawn
   'KY': 'L',    // Kyu      Lance
@@ -57,6 +44,19 @@ function pieceToSFEN(color, kind) {
   const p = promoted[kind];
   const str = sfenPiece[p || kind];
   return (p ? '+' : ' ') + ((color === Color.Black) ? str : str.toLowerCase());
+}
+
+function position(square) {
+
+  // TODO(burdon): BUG: shogiboardjsx coordinates are inverted.
+  if (typeof square === 'string') {
+    return {
+      x: 10 - ('abcdefghi'.indexOf(square[0]) + 1),
+      y: 10 - Number(square[1])
+    };
+  } else {
+    return square;
+  }
 }
 
 /**
@@ -107,9 +107,12 @@ export class Shogi {
 
     try {
       this._game.move(x1, y1, x2, y2);
-      return true;
+      return {
+        from: { x:x1, y:y1 },
+        to: { x:x2, y:y2 }
+      };
     } catch (ex) {
-      return false;
+      return null;
     }
   }
 

@@ -1,9 +1,26 @@
 {
   "name": "@wirelineio/shogi-core",
-  "version": "0.1.0",
-  "description": "Shogi core",
+  "description": "Shogi shared library",
+  "version": "0.1.5",
   "repository": "https://github.com/wirelineio/shogi",
   "main": "dist/index.js",
+  "dependencies": {
+    "@babel/runtime": "^7.1.5",
+    "shogi.js": "^2.0.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.3.0",
+    "@babel/plugin-proposal-export-default-from": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "babel-jest": "^24.7.1",
+    "babel-loader": "^8.0.0",
+    "babel-plugin-add-module-exports": "^1.0.0",
+    "eslint-loader": "^2.1.2",
+    "jest": "^24.7.1"
+  },
   "scripts": {
     "build": "npm run clean && npm run dist",
     "clean": "rm -rf dist",
@@ -11,29 +28,10 @@
     "lint": "eslint ./src --ignore-path ../../.eslintignore",
     "test": "jest --verbose"
   },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@babel/cli": "^7.4.4",
-    "@babel/core": "^7.0.0",
-    "@babel/plugin-proposal-class-properties": "^7.4.0",
-    "@babel/plugin-proposal-export-default-from": "^7.2.0",
-    "@babel/plugin-transform-runtime": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
-    "babel-jest": "^24.7.1",
-    "babel-loader": "^8.0.0",
-    "babel-plugin-add-module-exports": "^1.0.0",
-    "dotenv-webpack": "^1.7.0",
-    "eslint-loader": "^2.1.2",
-    "jest": "^24.7.1",
-    "webpack": "^4.17.1",
-    "webpack-bundle-analyzer": "^3.0.4",
-    "webpack-cli": "^3.1.0",
-    "webpack-dev-server": "^3.2.1",
-    "webpack-merge": "^4.2.1",
-    "zip-webpack-plugin": "^3.0.0"
-  },
-  "dependencies": {
-    "shogi.js": "^2.0.1"
-  }
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }

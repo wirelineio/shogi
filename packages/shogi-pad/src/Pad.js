@@ -3,6 +3,9 @@
 //
 
 import React, { Component } from 'react';
+import { compose } from 'react-apollo';
+
+import { withStyles } from '@material-ui/core/styles';
 
 import { withLogView } from '@wirelineio/appkit';
 
@@ -12,6 +15,15 @@ import { Shogi } from '@wirelineio/shogi-core';
 import Shogiboard from '@wirelineio/shogiboardjsx';
 
 import Defs from './defs';
+
+const styles = () => ({
+
+  root: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center'
+  }
+});
 
 /**
  * The Pad component is wrapped by the `withLogView`
@@ -37,8 +49,8 @@ class Pad extends Component {
 
   handleDrop = ({ sourceSquare: from, targetSquare: to }) => {
     const { game } = this.state;
-    const move = game.move({ from, to });
 
+    const move = game.move({ from, to });
     if (move) {
       const { from, to } = move;
       this.setState({ game, local: true }, () => {
@@ -48,12 +60,18 @@ class Pad extends Component {
   };
 
   render() {
+    const { classes } = this.props;
     const { game } = this.state;
 
     return (
-      <Shogiboard position={game.toSFEN()} onDrop={this.handleDrop} />
+      <div className={classes.root}>
+        <Shogiboard position={game.toSFEN()} onDrop={this.handleDrop} />
+      </div>
     );
   }
 }
 
-export default withLogView({ view: Defs.view })(Pad);
+export default compose(
+  withStyles(styles),
+  withLogView({ view: Defs.view })
+)(Pad);
