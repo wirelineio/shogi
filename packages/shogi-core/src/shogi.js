@@ -17,6 +17,17 @@ const sfenPiece = {
   'OU': 'K',    // Oo       King
 };
 
+const toSfen = {
+  'P': 'FU',
+  'L': 'KY',
+  'N': 'KE',
+  'S': 'GI',
+  'G': 'KI',
+  'B': 'KA',
+  'R': 'HI',
+  'K': 'OU',
+};
+
 const promoted = {
   'TO': 'FU',   // Tokin
   'NY': 'KY',   //
@@ -119,6 +130,7 @@ export class Shogi {
     const { x:x2, y:y2 } = position(to);
 
     // Auto-promotion.
+    // TODO(burdon): Also, after first move after drop.
     // TODO(burdon): Should depend on orientation of board.
     const promote = ((this._game.turn === Color.Black && y2 <= 3) || (this._game.turn === Color.White && y2 >= 7));
 
@@ -130,6 +142,22 @@ export class Shogi {
         to: { x:x2, y:y2 }
       };
     } catch (ex) {
+      // console.log('Invalid', ex);
+      return null;
+    }
+  }
+
+  drop({ to, piece }) {
+    const { x, y } = position(to);
+
+    const kind = toSfen[piece[1]];
+
+    try {
+      this._game.drop(x, y, kind, this._game.turn);
+
+      return { drop: { x, y }, piece };
+    } catch (ex) {
+      // console.log('Invalid', ex);
       return null;
     }
   }

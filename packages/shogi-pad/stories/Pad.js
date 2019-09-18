@@ -18,11 +18,17 @@ export default class Pad extends Component {
     game: new Shogi('ln1g5/1r2S1k2/p2pppn2/2ps2p2/1p7/2P6/PPSPPPPLP/2G2K1pr/LN4G1+b w BGSLPnp')
   };
 
-  handleDrop = ({ sourceSquare: from, targetSquare: to }) => {
+  handleDrop = ({ piece, sourceSquare: from, targetSquare: to }) => {
     const { game } = this.state;
 
-    if (game.move({ from, to })) {
-      this.setState({ game });
+    if (from === 'spare') {
+      if (game.drop({ to, piece })) {
+        this.setState({ game });
+      }
+    } else {
+      if (game.move({ from, to })) {
+        this.setState({ game });
+      }
     }
   };
 
