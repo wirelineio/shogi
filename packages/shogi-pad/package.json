@@ -23,7 +23,7 @@
     "@material-ui/icons": "^3.0.1",
     "@wirelineio/appkit": "^0.2.10",
     "@wirelineio/shogi-core": "^0.1.7",
-    "@wirelineio/shogiboardjsx": "^0.1.0"
+    "shogiboardjsx": "^0.1.7"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
