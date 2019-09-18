@@ -39,16 +39,20 @@ const kanji = {
 };
 */
 
-// TODO(burdon): Handle promoted pieces.
 function pieceToSFEN(color, kind) {
   const p = promoted[kind];
   const str = sfenPiece[p || kind];
   return (p ? '+' : ' ') + ((color === Color.Black) ? str : str.toLowerCase());
 }
 
+/**
+ * (1, 1) is top right.
+ *
+ * @param square
+ * @return {{x: number, y: number}|*}
+ */
 function position(square) {
 
-  // TODO(burdon): BUG: shogiboardjsx coordinates are inverted.
   if (typeof square === 'string') {
     return {
       x: 10 - ('abcdefghi'.indexOf(square[0]) + 1),
@@ -63,6 +67,8 @@ function position(square) {
  * Wrapper.
  */
 export class Shogi {
+
+  // TODO(burdon): Black (bottom) should play first.
 
   static EMPTY = '9/9/9/9/9/9/9/9/9 b - 1';
 
@@ -112,8 +118,13 @@ export class Shogi {
     const { x:x1, y:y1 } = position(from);
     const { x:x2, y:y2 } = position(to);
 
+    // Auto-promotion.
+    // TODO(burdon): Should depend on orientation of board.
+    const promote = ((this._game.turn === Color.Black && y2 <= 3) || (this._game.turn === Color.White && y2 >= 7));
+
     try {
-      this._game.move(x1, y1, x2, y2);
+      this._game.move(x1, y1, x2, y2, promote);
+
       return {
         from: { x:x1, y:y1 },
         to: { x:x2, y:y2 }

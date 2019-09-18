@@ -30,10 +30,25 @@ class SparePieces extends Component {
     return (
       <Shogiboard.Consumer>
         {context => {
-          const spares =
-            this.getOrientation(context.orientation) === 'black'
-              ? ['bK', 'bQ', 'bR', 'bB', 'bN', 'bP']
-              : ['wK', 'wQ', 'wR', 'wB', 'wN', 'wP'];
+          const captured = context.position.split(' ')[2];
+
+          const spares = [];
+
+          let i = 0;
+          let count = 1;
+          while (i < captured.length) {
+            const c = captured[i];
+            if (Number(c)) {
+              count = Number(c);
+            } else {
+              if ((c.toUpperCase() === c && !this.props.top) ||
+                (c.toUpperCase() !== c && this.props.top)) {
+                spares.push((this.props.top ? 'b' : 'w') + c.toUpperCase())
+              }
+            }
+
+            i++;
+          }
 
           return (
             <div style={spareStyles(context.width)}>
@@ -73,5 +88,9 @@ export default SparePieces;
 const spareStyles = width => ({
   display: 'flex',
   justifyContent: 'center',
-  width
+  width,
+  height: '64px',
+  padding: '16px 0',
+  // margin: '16px 0',
+  backgroundColor: 'rgba(181, 136, 99, .1)'
 });

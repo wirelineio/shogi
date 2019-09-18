@@ -14,7 +14,8 @@ export default class Pad extends Component {
 
   state = {
     // https://en.wikipedia.org/wiki/Shogi_notation
-    game: new Shogi('ln1g5/1r2S1k2/p2pppn2/2ps2p2/1p7/2P6/PPSPPPPLP/2G2K1pr/LN4G1+b w BGSLPnp')
+    // game: new Shogi('ln1g5/1r2S1k2/p2pppn2/2ps2p2/1p7/2P6/PPSPPPPLP/2G2K1pr/LN4G1+b w BGSLPnp')
+    game: new Shogi(Shogi.INIT)
   };
 
   handleDrop = ({ sourceSquare: from, targetSquare: to }) => {
@@ -48,7 +49,7 @@ export default class Pad extends Component {
 
     return (
       <div>
-        <Shogiboard position={game.toSFEN()} onDrop={this.handleDrop} />
+        <Shogiboard position={game.toSFEN()} sparePieces={true} onDrop={this.handleDrop} />
         <button onClick={this.handleSuggest}>Suggest</button>
       </div>
     );
