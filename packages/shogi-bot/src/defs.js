@@ -2,4 +2,4 @@
 // Copyright 2019 Wireline, Inc.
 //
 
-export * from './bot';
+export const view = 'shogi';

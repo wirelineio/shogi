@@ -1,3 +1,3 @@
-# Chess Bot
+# Shogi Bot
 
-Chess Bot for the Wireline Network.
+Shogi Bot for the Wireline Network.
