@@ -31,6 +31,8 @@ export const renderChessPiece = ({
     sourceSquare: dropTarget && dropTarget.source
   };
 
+  // console.log('Piece', piece);
+
   return (
     <div
       data-testid={`${piece}-${square}`}

@@ -36,7 +36,24 @@ export function fenToObj(fen) {
 
   let currentRow = 9;
   for (let i = 0; i < 9; i++) {
-    let row = rows[i].split('');
+
+    // let row = rows[i].split('');
+
+    // Handle promoted pieces (+ prefix).
+    let row = [];
+    let promoted = false;
+    for (let p = 0; p < rows[i].length; p++) {
+      const c = rows[i][p];
+      if (c === '+') {
+        promoted = true;
+      } else {
+        row.push(promoted ? '+' + c : c);
+        promoted = false;
+      }
+    }
+
+    // console.log('>>>>>', row);
+
     let colIdx = 0;
 
     // loop through each character in the FEN section
@@ -85,10 +102,13 @@ export function validFen(fen) {
   let chunks = fen.split('/');
   if (chunks.length !== 9) return false;
 
-  // TODO(burdon): Promoted pieces are prefixed with "+".
   // check each section
   for (let i = 0; i < 9; i++) {
-    if (chunks[i].length !== 9 || chunks[i].search(/[^lnsgkrbpLNSGKRBP1]/) !== -1) {
+
+    // Ignore promoted indicator.
+    const chunk = chunks[i].replace(/\+/g, '');
+
+    if (chunk.length !== 9 || chunk.search(/[^lnsgkrbpLNSGKRBP1]/) !== -1) {
       return false;
     }
   }
@@ -99,6 +119,10 @@ export function validFen(fen) {
 // TODO(burdon): Promoted pieces (+X)
 // convert FEN piece code to bP, wK, etc
 function fenToPieceCode(piece) {
+
+  // console.log(piece);
+  // return 'wB_';
+
   // black piece
   if (piece.toLowerCase() === piece) {
     return 'b' + piece.toUpperCase();

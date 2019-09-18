@@ -23,9 +23,6 @@ const getPositionObject = position => {
   if (position === 'start')
     return fenToObj('lnsgkgsnl/1r5b1/ppppppppp/9/9/9/PPPPPPPPP/1B5R1/LNSGKGSNL');
 
-  // TODO(burdon): Hack.
-  position = position.replace(/\+/g, '');
-
   if (validFen(position)) return fenToObj(position);
   if (validPositionObject(position)) return position;
 
