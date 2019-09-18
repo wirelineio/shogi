@@ -1,6 +1,6 @@
 {
   "name": "@wirelineio/shogi-bot",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Shogi Bot",
   "repository": "https://github.com/wirelineio/shogi",
   "license": "UNLICENSED",
@@ -36,7 +36,7 @@
     "@babel/runtime": "^7.0.0",
     "@wirelineio/botkit": "^0.1.26",
     "@wirelineio/sdk": "^0.1.25",
-    "@wirelineio/shogi-core": "^0.1.8",
+    "@wirelineio/shogi-core": "^0.1.9",
     "debug": "^4.1.1",
     "pify": "^4.0.1",
     "source-map-support": "^0.5.4"
