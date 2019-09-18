@@ -1,7 +1,7 @@
 {
   "name": "@wirelineio/shogi-core",
   "description": "Shogi shared library",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "repository": "https://github.com/wirelineio/shogi",
   "main": "dist/index.js",
   "dependencies": {
