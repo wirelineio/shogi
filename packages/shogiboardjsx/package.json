@@ -27,14 +27,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/wirelineio/shogiboardjsx.git"
+    "url": "https://github.com/wirelineio/shogi.git"
   },
   "author": "William .J Bashelor <wbashelor@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/wirelineio/shogiboardjsx/issues"
+    "url": "https://github.com/wirelineio/shogi/issues"
   },
-  "homepage": "https://github.com/wirelineio/shogiboardjsx#readme",
+  "homepage": "https://github.com/wirelineio/shogi#readme",
   "dependencies": {
     "deep-diff": "1.0.1",
     "lodash.isequal": "4.5.0",

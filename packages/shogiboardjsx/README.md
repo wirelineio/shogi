@@ -3,7 +3,7 @@
 ## Installation
 
 ```
-npm install --save @wirelineio/shogiboardjsx
+npm install --save shogiboardjsx
 ```
 
 The package also depends on [React](https://reactjs.org/). Make sure you have that installed as well.
@@ -15,7 +15,7 @@ The package also depends on [React](https://reactjs.org/). Make sure you have th
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Shogiboard from '@wirelineio/shogiboardjsx';
+import Shogiboard from 'shogiboardjsx';
 
 ReactDOM.render(<Shogiboard position="start" />, document.getElementById('root'));
 
