@@ -81,3 +81,8 @@ dump/
 .yalc
 yalc.lock
 
+# Bot config file
+service.yml
+
+# Bot storage
+.bots
