@@ -14,6 +14,7 @@ const filters = () => (
 // https://github.com/orangain/shogi-piece-images/tree/master/original
 // https://en.wikipedia.org/wiki/Shogi
 
+// Piece background.
 const color = '#ece7dd';
 
 // King (K)

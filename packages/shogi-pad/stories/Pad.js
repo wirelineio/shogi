@@ -3,6 +3,7 @@
 //
 
 import React, { Component } from 'react';
+import { button } from '@storybook/addon-knobs';
 
 import { Shogi } from '@wirelineio/shogi-core';
 
@@ -18,21 +19,19 @@ export default class Pad extends Component {
     game: new Shogi('ln1g5/1r2S1k2/p2pppn2/2ps2p2/1p7/2P6/PPSPPPPLP/2G2K1pr/LN4G1+b w BGSLPnp')
   };
 
-  handleDrop = ({ piece, sourceSquare: from, targetSquare: to }) => {
-    const { game } = this.state;
+  constructor() {
+    super(...arguments);
 
-    if (from === 'spare') {
-      if (game.drop({ to, piece })) {
-        this.setState({ game });
-      }
-    } else {
-      if (game.move({ from, to })) {
-        this.setState({ game });
-      }
-    }
-  };
+    // TODO(burdon):
+    console.log('Shogi');
 
-  handleSuggest = () => {
+    button('Suggest', () => {
+      this.suggest();
+      return false;
+    });
+  }
+
+  suggest() {
     const { game } = this.state;
 
     // TODO(burdon): Score position: Attack or improve protection.
@@ -41,6 +40,20 @@ export default class Pad extends Component {
     if (moves.length) {
       const { from, to } = moves[ Math.floor(moves.length * Math.random()) ];
 
+      if (game.move({ from, to })) {
+        this.setState({ game });
+      }
+    }
+  }
+
+  handleDrop = ({ piece, sourceSquare: from, targetSquare: to }) => {
+    const { game } = this.state;
+
+    if (from === 'spare') {
+      if (game.drop({ to, piece })) {
+        this.setState({ game });
+      }
+    } else {
       if (game.move({ from, to })) {
         this.setState({ game });
       }
@@ -56,7 +69,6 @@ export default class Pad extends Component {
     return (
       <div>
         <Shogiboard position={game.toSFEN()} sparePieces={true} onDrop={this.handleDrop} />
-        <button onClick={this.handleSuggest}>Suggest</button>
       </div>
     );
   }
