@@ -22,9 +22,7 @@ export default class Pad extends Component {
   constructor() {
     super(...arguments);
 
-    // TODO(burdon):
-    console.log('Shogi');
-
+    // TODO(burdon): Bug: called multiple times if WDS reloads.
     button('Suggest', () => {
       this.suggest();
       return false;
