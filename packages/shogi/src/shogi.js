@@ -2,8 +2,7 @@
 // Copyright 2019 Wireline, Inc.
 //
 
-// TODO(burdon): Fork or patch.
-
+// TODO(burdon): Fork or patch?
 import { Shogi as Game, Color } from 'shogi.js';
 
 const sfenPiece = {
