@@ -12,17 +12,7 @@
   ],
   "plugins": [
     "add-module-exports",
-    "@babel/plugin-proposal-class-properties",
-    "@babel/plugin-transform-modules-commonjs",
     "@babel/plugin-transform-runtime",
-    [
-      "babel-plugin-inline-import", {
-        "extensions": [
-          ".dot",
-          ".md",
-          ".proto"
-        ]
-      }
-    ]
+    "@babel/plugin-proposal-class-properties"
   ]
 }
