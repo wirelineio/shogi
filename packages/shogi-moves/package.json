@@ -1,12 +1,12 @@
 {
-  "name": "@wirelineio/shogi-core",
-  "description": "Shogi core library",
+  "name": "shogi-moves",
+  "description": "Shogi move generation/validation & piece placement/movement.",
   "version": "0.1.10",
   "repository": "https://github.com/wirelineio/shogi",
   "main": "dist/index.js",
   "dependencies": {
     "@babel/runtime": "^7.1.5",
-    "shogi-moves": "^0.1.10"
+    "shogi.js": "^2.0.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
@@ -27,7 +27,7 @@
     "clean": "rm -rf dist",
     "dist": "babel ./src --out-dir ./dist --ignore \"**/*.test.js\" --copy-files",
     "lint": "eslint ./src --ignore-path ../../.eslintignore",
-    "test": "jest --verbose --passWithNoTests"
+    "test": "jest --verbose"
   },
   "browserslist": [
     ">0.2%",
