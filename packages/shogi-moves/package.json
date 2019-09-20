@@ -1,7 +1,7 @@
 {
-  "name": "@gamelan/shogi",
-  "description": "Shogi moves util",
-  "version": "0.1.1",
+  "name": "shogi-moves",
+  "description": "Shogi move generation/validation & piece placement/movement.",
+  "version": "0.1.12",
   "repository": "https://github.com/wirelineio/shogi",
   "main": "dist/index.js",
   "dependencies": {
@@ -25,7 +25,7 @@
   "scripts": {
     "build": "npm run clean && npm run dist",
     "clean": "rm -rf dist",
-    "dist": "babel ./src --out-dir ./dist --ignore \"**/*.test.js\" --copy-files",
+    "dist": "babel ./src --out-dir ./dist --ignore \"**/*.test.js\"",
     "lint": "eslint ./src --ignore-path ../../.eslintignore",
     "test": "jest --verbose"
   },

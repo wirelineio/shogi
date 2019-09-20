@@ -1,12 +1,12 @@
 {
   "name": "@wirelineio/shogi-core",
-  "description": "Shogi shared library",
-  "version": "0.1.9",
+  "description": "Shogi core library",
+  "version": "0.1.12",
   "repository": "https://github.com/wirelineio/shogi",
   "main": "dist/index.js",
   "dependencies": {
     "@babel/runtime": "^7.1.5",
-    "@gamelan/shogi": "^0.1.1"
+    "shogi-moves": "^0.1.12"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
@@ -25,9 +25,9 @@
   "scripts": {
     "build": "npm run clean && npm run dist",
     "clean": "rm -rf dist",
-    "dist": "babel ./src --out-dir ./dist --ignore \"**/*.test.js\" --copy-files",
+    "dist": "babel ./src --out-dir ./dist --ignore \"**/*.test.js\"",
     "lint": "eslint ./src --ignore-path ../../.eslintignore",
-    "test": "jest --verbose"
+    "test": "jest --verbose --passWithNoTests"
   },
   "browserslist": [
     ">0.2%",

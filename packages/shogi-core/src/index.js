@@ -2,4 +2,4 @@
 // Copyright 2019 Wireline, Inc.
 //
 
-export * from '@gamelan/shogi';
+export * from 'shogi-moves';
