@@ -11,8 +11,7 @@ import { withLogView } from '@wirelineio/appkit';
 
 import { Shogi } from '@wirelineio/shogi-core';
 
-// TODO(burdon): Change domain.
-import Shogiboard from '@wirelineio/shogiboardjsx';
+import Shogiboard from 'shogiboardjsx';
 
 import Defs from './defs';
 
