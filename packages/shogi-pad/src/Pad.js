@@ -64,7 +64,7 @@ class Pad extends Component {
 
     return (
       <div className={classes.root}>
-        <Shogiboard position={game.toSFEN()} onDrop={this.handleDrop} />
+        <Shogiboard position={game.toSFEN()} sparePieces={true} onDrop={this.handleDrop} />
       </div>
     );
   }

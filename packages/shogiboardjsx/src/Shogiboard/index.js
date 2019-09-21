@@ -197,7 +197,7 @@ class Shogiboard extends Component {
     darkSquareStyle: { backgroundColor: 'rgba(181, 136, 99, .1)' },
     squareStyles: { },
     dropSquareStyle: { boxShadow: 'inset 0 0 1px 2px #333' },
-    calcWidth: () => {},
+    calcWidth: ({ screenWidth, screenHeight }) => Math.min(screenWidth, screenHeight) * .75,
     roughSquare: () => {},
     onMouseOverSquare: () => {},
     onMouseOutSquare: () => {},

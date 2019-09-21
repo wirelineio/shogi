@@ -66,7 +66,11 @@ export default class Pad extends Component {
 
     return (
       <div>
-        <Shogiboard position={game.toSFEN()} sparePieces={true} onDrop={this.handleDrop} />
+        <Shogiboard
+          position={game.toSFEN()}
+          sparePieces={true}
+          onDrop={this.handleDrop}
+        />
       </div>
     );
   }

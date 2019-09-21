@@ -19,6 +19,7 @@
   "scripts": {
     "clean": "lerna run clean",
     "build": "lerna run build",
+    "publish": "lerna run publish",
     "test": "lerna run test",
     "lint": "lerna run lint",
     "lint:fix": "lerna run lint -- --fix",
