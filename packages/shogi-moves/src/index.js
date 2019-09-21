@@ -2,4 +2,6 @@
 // Copyright 2019 Wireline, Inc.
 //
 
-export * from './shogi';
+import { Shogi } from './shogi';
+
+export default Shogi;
