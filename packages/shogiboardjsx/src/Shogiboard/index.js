@@ -186,18 +186,18 @@ class Shogiboard extends Component {
     pieces: {},
     width: 560,
     orientation: 'white',
-    showNotation: true,
+    showNotation: false,
     sparePieces: false,
     draggable: true,
     undo: false,
     dropOffBoard: 'snapback',
     transitionDuration: 300,
     boardStyle: {},
-    lightSquareStyle: { backgroundColor: 'rgb(240, 217, 181)', boxShadow: 'inset 0 0 1px 1px rgba(0,0,0,.1)' },
+    lightSquareStyle: { backgroundColor: 'rgb(240, 217, 181)', boxShadow: 'inset 0 0 .5px .5px rgba(0,0,0,.2)' },
     darkSquareStyle: { backgroundColor: 'rgba(181, 136, 99, .1)' },
     squareStyles: { },
     dropSquareStyle: { boxShadow: 'inset 0 0 1px 2px #333' },
-    calcWidth: ({ screenWidth, screenHeight }) => Math.min(screenWidth, screenHeight) * .75,
+    calcWidth: ({ screenWidth, screenHeight }) => Math.min(screenWidth, screenHeight) * .8,
     roughSquare: () => {},
     onMouseOverSquare: () => {},
     onMouseOutSquare: () => {},
@@ -458,11 +458,12 @@ class Shogiboard extends Component {
             }
           }}
         >
-          <div>
+          <div style={{ display: 'flex' }}>
             {getScreenDimensions && sparePieces && <SparePieces.Top />}
             {getScreenDimensions && <Board />}
             {getScreenDimensions && sparePieces && <SparePieces.Bottom />}
           </div>
+
           <CustomDragLayer
             width={this.getWidth()}
             pieces={pieces}

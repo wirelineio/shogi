@@ -50,31 +50,35 @@ class SparePieces extends Component {
             i++;
           }
 
+          console.log(context.width)
+
           return (
-            <div style={spareStyles(context.width)}>
-              {spares.map(p => (
-                <div data-testid={`spare-${p}`} key={p}>
-                  <Piece
-                    piece={p}
-                    width={context.width}
-                    setPosition={context.setPosition}
-                    square={'spare'}
-                    dropOffBoard={context.dropOffBoard}
-                    draggable={true}
-                    onDrop={context.onDrop}
-                    sourceSquare={context.sourceSquare}
-                    targetSquare={context.targetSquare}
-                    sourcePiece={context.sourcePiece}
-                    orientation={context.orientation}
-                    manualDrop={context.manualDrop}
-                    id={context.id}
-                    pieces={context.pieces}
-                    wasManuallyDropped={context.wasManuallyDropped}
-                    onPieceClick={context.onPieceClick}
-                    allowDrag={context.allowDrag}
-                  />
-                </div>
-              ))}
+            <div style={spareContainerStyles(this.props.top, context.width)}>
+              <div style={spareStyles(this.props.top, context.width)}>
+                {spares.map(p => (
+                  <div data-testid={`spare-${p}`} key={p}>
+                    <Piece
+                      piece={p}
+                      width={context.width}
+                      setPosition={context.setPosition}
+                      square={'spare'}
+                      dropOffBoard={context.dropOffBoard}
+                      draggable={true}
+                      onDrop={context.onDrop}
+                      sourceSquare={context.sourceSquare}
+                      targetSquare={context.targetSquare}
+                      sourcePiece={context.sourcePiece}
+                      orientation={context.orientation}
+                      manualDrop={context.manualDrop}
+                      id={context.id}
+                      pieces={context.pieces}
+                      wasManuallyDropped={context.wasManuallyDropped}
+                      onPieceClick={context.onPieceClick}
+                      allowDrag={context.allowDrag}
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           );
         }}
@@ -85,12 +89,15 @@ class SparePieces extends Component {
 
 export default SparePieces;
 
-const spareStyles = width => ({
+const spareContainerStyles = (top, width) => ({
   display: 'flex',
-  justifyContent: 'center',
-  width,
-  height: '64px',
-  padding: '16px 0',
-  // margin: '16px 0',
+  flexDirection: 'row' + (top ? '' : '-reverse'),
+  width: `${Math.floor(width / 6)}px`,
+  padding: '0 6px',
   backgroundColor: 'rgba(181, 136, 99, .1)'
+});
+
+const spareStyles = (top, width) => ({
+  display: 'flex',
+  flexDirection: 'column' + (top ? '' : '-reverse'),
 });

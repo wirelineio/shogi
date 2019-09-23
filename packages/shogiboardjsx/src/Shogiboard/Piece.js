@@ -59,7 +59,7 @@ export const renderChessPiece = ({
           pieces[piece](renderChessPieceArgs)
         ) : (
           <svg viewBox={`1 1 42 50`} width={width / 9} height={(width / 9) - 2}>
-            <g transform="scale(0.95) translate(2 2)">{pieces[piece]}</g>
+            <g transform="scale(0.9) translate(2 4)">{pieces[piece]}</g>
           </svg>
         )}
     </div>
