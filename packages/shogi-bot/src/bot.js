@@ -2,9 +2,9 @@
 // Copyright 2019 Wireline, Inc.
 //
 
-import { LogBot } from '@wirelineio/botkit';
+import Shogi from 'shogi-moves';
 
-import { Shogi } from '@wirelineio/shogi-core';
+import { LogBot } from '@wirelineio/botkit';
 
 import { view } from './defs';
 
