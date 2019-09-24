@@ -28,10 +28,10 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0",
-    "@wirelineio/botkit": "^0.2.4",
-    "@wirelineio/shogi-core": "^0.1.18",
+    "@wirelineio/botkit": "^0.2.9",
     "debug": "^4.1.1",
     "pify": "^4.0.1",
+    "shogi-moves": "^0.1.18",
     "source-map-support": "^0.5.11"
   },
   "scripts": {
