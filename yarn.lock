@@ -1243,26 +1243,10 @@
     unique-filename "^1.1.1"
     which "^1.3.1"
 
-"@geut/discovery-swarm-webrtc@2.0.0-alpha.19":
-  version "2.0.0-alpha.19"
-  resolved "https://registry.yarnpkg.com/@geut/discovery-swarm-webrtc/-/discovery-swarm-webrtc-2.0.0-alpha.19.tgz#6da974f6884916741fd4e6848abcf4338b175149"
-  integrity sha512-HtOTrxObwWSHcmWQZ4e3xeEls7Ri553jszOBOl9pKngkW5La2y/4nItOOYkIcH/c+3haQMfZCnFZIU+43qiThg==
-  dependencies:
-    debug "^4.1.1"
-    lodash.shuffle "^4.2.0"
-    minimist "^1.2.0"
-    monotonic-timestamp "0.0.9"
-    multiplex "^6.7.0"
-    pump "^3.0.0"
-    simple-signal-client "^2.0.2"
-    simple-signal-server "^2.1.0"
-    socket.io "^2.2.0"
-    socket.io-client "^2.2.0"
-
-"@geut/discovery-swarm-webrtc@^2.0.0-alpha.19":
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/@geut/discovery-swarm-webrtc/-/discovery-swarm-webrtc-2.2.1.tgz#dbe6f574b0b994e747a658561209b5cb39380a50"
-  integrity sha512-YMVycy4tZFiw1oJWQj6PXuR/PJyzgL0cgsa1iWnQyKHOpMAxYEc4j++5BlptYHs8RKY35+o0caJJZAuOkpWqVQ==
+"@geut/discovery-swarm-webrtc@^2.2.3":
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/@geut/discovery-swarm-webrtc/-/discovery-swarm-webrtc-2.2.3.tgz#9a38ea8488164ffb6dbd6ad0740f01f7350ad909"
+  integrity sha512-VMq0aWcJ+GK7+vGOGkFbYjPAqTmLnOsgXauvJsfmVXCZH3eulYCtWV02R9yVig9hVX+SXyVPHYHowzibSJoxuw==
   dependencies:
     debug "^4.1.1"
     minimist "^1.2.0"
@@ -3407,16 +3391,15 @@
     immer "^3.1.3"
     url-join "^4.0.1"
 
-"@wirelineio/botkit@^0.2.4":
-  version "0.2.8"
-  resolved "https://registry.yarnpkg.com/@wirelineio/botkit/-/botkit-0.2.8.tgz#1c04269aeff856e041b839dd0f910e554d5f36b7"
-  integrity sha512-MN2noPGeD7GtKBopO/k1RvGNSGi+sxojx/iqoYsX6YTEVzpPw7oNk46VCMYKU5fb6F0HzklhNGi8DDNViERp3g==
+"@wirelineio/botkit@^0.2.10":
+  version "0.2.10"
+  resolved "https://registry.yarnpkg.com/@wirelineio/botkit/-/botkit-0.2.10.tgz#10805c502a27d2d95786cec949d671baadb2973f"
+  integrity sha512-mgI2IsITiS9xYnKac0Dxow7volv8pyGDHB4hDjiZ2loSFn27U6L6+bwkbyimRho2ibXzE0JNt5byIQWyAtAokg==
   dependencies:
     "@babel/runtime" "^7.0.0"
-    "@geut/discovery-swarm-webrtc" "^2.0.0-alpha.19"
-    "@wirelineio/framework" "^0.2.9"
-    "@wirelineio/protocol" "^0.2.9"
-    "@wirelineio/utils" "^0.2.9"
+    "@wirelineio/framework" "^0.2.19"
+    "@wirelineio/protocol" "^0.2.19"
+    "@wirelineio/utils" "^0.2.19"
     configstore "^5.0.0"
     firebase-humanhash "^0.0.2"
     fs-extra "^8.1.0"
@@ -3426,6 +3409,15 @@
     uuidv4 "^4.0.0"
     wrtc "^0.4.1"
     yargs "^13.3.0"
+
+"@wirelineio/broadcast@^0.2.19":
+  version "0.2.19"
+  resolved "https://registry.yarnpkg.com/@wirelineio/broadcast/-/broadcast-0.2.19.tgz#9e36674cf58005f48ec850e0de2efbfc843d421e"
+  integrity sha512-3gXHodrv4QCkZ/HX5cP57cSes2tiy8in/jdcxPb9n3nIJTUKE8DaBApfOBgsEuTUYLfwhwKqDPpMhU+csmOIfw==
+  dependencies:
+    "@wirelineio/codec-protobuf" "^0.2.19"
+    debug "^4.1.1"
+    source-map-support "^0.5.12"
 
 "@wirelineio/cli-bot@^0.3.10":
   version "0.3.17"
@@ -3485,20 +3477,20 @@
     read-pkg-up "^6.0.0"
     yargs "^11.0.0"
 
-"@wirelineio/codec-protobuf@^0.2.17":
-  version "0.2.17"
-  resolved "https://registry.yarnpkg.com/@wirelineio/codec-protobuf/-/codec-protobuf-0.2.17.tgz#2e2fe424ff7ef519a2b3e2be046cb1c75b93413b"
-  integrity sha512-7X2BvdpmeuR2MRBQkqKJDUgEj0bAsWaOAXtgDmfcQn3yQxwmFTkj22eAhfo8A5D1VJ6WHvYoD184AEtRe6zUjQ==
+"@wirelineio/codec-protobuf@^0.2.19":
+  version "0.2.19"
+  resolved "https://registry.yarnpkg.com/@wirelineio/codec-protobuf/-/codec-protobuf-0.2.19.tgz#791f6b50601d8731b0e770fb9e9bcc16e521b2eb"
+  integrity sha512-jCuuiqoMjL15BuA3wbwVZinutAG50MhcHskUMgC9CncmRa8SUih/SMjXixgMRnsee/C60/Hx7sUWE2wlViLTug==
   dependencies:
     protobufjs "https://github.com/wirelineio/protobuf.js#wireline-dist"
 
-"@wirelineio/feed-store@^0.2.17":
-  version "0.2.17"
-  resolved "https://registry.yarnpkg.com/@wirelineio/feed-store/-/feed-store-0.2.17.tgz#99c0e6b958809e9ef298c79f405b45c55524bc92"
-  integrity sha512-jBaC7aO4AjaKsiSAHzVCSLzNStlD99tOcj8qH2NZTaBO3iA574COBAeMKvF4zaUdPIlrqHTfzZwU//B3Wjb9Ug==
+"@wirelineio/feed-store@^0.2.19":
+  version "0.2.19"
+  resolved "https://registry.yarnpkg.com/@wirelineio/feed-store/-/feed-store-0.2.19.tgz#cb5e87010883b57f473e1cbe93e4ce04af6e57ae"
+  integrity sha512-WNsHid0kGTVsl7X2kgqWrOBtmAp+XzfaQ4Mzr4jthTaRcO2rBsvofO+m5RqkPowkzc0296Q6fu8ySTwTzTU2Xw==
   dependencies:
-    "@wirelineio/codec-protobuf" "^0.2.17"
-    "@wirelineio/utils" "^0.2.17"
+    "@wirelineio/codec-protobuf" "^0.2.19"
+    "@wirelineio/utils" "^0.2.19"
     debug "^4.1.1"
     hypercore "^6.24.0"
     hypercore-crypto "^1.0.0"
@@ -3506,15 +3498,15 @@
     pify "^4.0.1"
     random-access-file "^2.1.0"
 
-"@wirelineio/framework@^0.2.9":
-  version "0.2.17"
-  resolved "https://registry.yarnpkg.com/@wirelineio/framework/-/framework-0.2.17.tgz#a6bdb875183ac79ac95aabb47a920ebf583c6c72"
-  integrity sha512-/KhI4DgdIcPNOi8dlDKGXIjc/Jd0GGpvOaHwVX7LLJp5i2H3qLXc40Fzn24iU7rD0yQEA9fjV9H0uh/0VXMdNw==
+"@wirelineio/framework@^0.2.19":
+  version "0.2.19"
+  resolved "https://registry.yarnpkg.com/@wirelineio/framework/-/framework-0.2.19.tgz#277769d7b6e24e6e36d4c77727cf782c8f0012ce"
+  integrity sha512-JHHlZ2XUz/JwZ+gG7XJrQAwZb62Rdx5d0S8ApivGmrm76FwMZB6ykGp0Ysl8GKBSd50OBIOAsV6R2U3D/l0jSA==
   dependencies:
-    "@geut/discovery-swarm-webrtc" "2.0.0-alpha.19"
-    "@wirelineio/megafeed" "^0.2.17"
-    "@wirelineio/protocol" "^0.2.17"
-    "@wirelineio/utils" "^0.2.17"
+    "@geut/discovery-swarm-webrtc" "^2.2.3"
+    "@wirelineio/megafeed" "^0.2.19"
+    "@wirelineio/protocol" "^0.2.19"
+    "@wirelineio/utils" "^0.2.19"
     "@wirelineio/wire-inspect" "^0.1.17"
     bufferutil "^4.0.1"
     charwise "^3.0.1"
@@ -3541,14 +3533,14 @@
     wrtc "^0.4.2"
     yjs "13.0.0-97"
 
-"@wirelineio/megafeed@^0.2.17":
-  version "0.2.17"
-  resolved "https://registry.yarnpkg.com/@wirelineio/megafeed/-/megafeed-0.2.17.tgz#a3bebd282a66b76d21875a9f460c065e18429723"
-  integrity sha512-Cjwp7uUCbm4/ojVOJlQ2qRQv3W0KTNs0LIbmr64mKwP5mQay2YxAZItwaDMT1fqxa/Y3ECs7sWa92tu2L7hYbA==
+"@wirelineio/megafeed@^0.2.19":
+  version "0.2.19"
+  resolved "https://registry.yarnpkg.com/@wirelineio/megafeed/-/megafeed-0.2.19.tgz#1511f4a6604bf9bf5d1875c8fa44d51e03ff0e76"
+  integrity sha512-xJ2BfHCRQUCsQcO/q8oGtcWKJtbRQLreRaA42IpsfzbeaWZuLBEodlnju/V032xwqg1YDMdeiZeJGSBG66uPkg==
   dependencies:
-    "@wirelineio/feed-store" "^0.2.17"
-    "@wirelineio/protocol" "^0.2.17"
-    "@wirelineio/utils" "^0.2.17"
+    "@wirelineio/feed-store" "^0.2.19"
+    "@wirelineio/protocol" "^0.2.19"
+    "@wirelineio/utils" "^0.2.19"
     debug "^4.1.1"
     end-of-stream "^1.4.1"
     hypercore-crypto "^1.0.0"
@@ -3559,16 +3551,19 @@
     random-access-memory "^3.1.1"
     source-map-support "^0.5.12"
 
-"@wirelineio/protocol@^0.2.17", "@wirelineio/protocol@^0.2.9":
-  version "0.2.17"
-  resolved "https://registry.yarnpkg.com/@wirelineio/protocol/-/protocol-0.2.17.tgz#fb43224b2b2d74a7aa78390ae569fd2109b3eb97"
-  integrity sha512-c+VWeEAYFmA/4ceKW0oSC2AWTu4FPU6yRJEhGMq4FzWDqp5+OkVUKlIxF7bSV3mxa3B/Q5XWyTmFrXKsSYFuLQ==
+"@wirelineio/protocol@^0.2.19":
+  version "0.2.19"
+  resolved "https://registry.yarnpkg.com/@wirelineio/protocol/-/protocol-0.2.19.tgz#c176c288368be0aab5ba76de03f2288ac39df98c"
+  integrity sha512-7ekWHUa2dqzJRDQQUvtFMlPQChDZowivgKoI9sKgbXVGYcLpp8YL7i9DJDNZCYk818ABs7RlKUScfB+JbWDVZw==
   dependencies:
-    "@wirelineio/utils" "^0.2.17"
+    "@wirelineio/broadcast" "^0.2.19"
+    "@wirelineio/codec-protobuf" "^0.2.19"
+    "@wirelineio/utils" "^0.2.19"
     debug "^4.1.1"
     end-of-stream "^1.4.1"
     hypercore-crypto "^1.0.0"
     hypercore-protocol "^6.11.1"
+    ngraph.graph "^18.0.1"
     pump "^3.0.0"
     source-map-support "^0.5.12"
     uuid "^3.3.2"
@@ -3644,10 +3639,10 @@
     mutexify "^1.2.0"
     pify "^4.0.1"
 
-"@wirelineio/utils@^0.2.17", "@wirelineio/utils@^0.2.9":
-  version "0.2.17"
-  resolved "https://registry.yarnpkg.com/@wirelineio/utils/-/utils-0.2.17.tgz#a3583b0ce72ab5a172376a69d574b032c4b341bc"
-  integrity sha512-WhaYuOwvoIeLsZeNYla8VndJTzN8WwTjGbf41AZUWL9stVQB6UrhaJbbNKFG4PjQjTFaV2HsgLy0DBE759qJeA==
+"@wirelineio/utils@^0.2.19":
+  version "0.2.19"
+  resolved "https://registry.yarnpkg.com/@wirelineio/utils/-/utils-0.2.19.tgz#98f4c0da7a61a542ce2013a69ffb580e9204eda6"
+  integrity sha512-bQKVJCZqybWTKHtVB9zZjEJYxl3CdD7nG6qfuZ/PX8pHNi32G7cgR+biK3UXBv/2S4hy40XbnU3xq73AVMUZpw==
   dependencies:
     chance "^1.0.18"
     debug "^4.1.1"
@@ -13989,11 +13984,6 @@ lodash.set@^4.3.2:
   resolved "https://registry.yarnpkg.com/lodash.set/-/lodash.set-4.3.2.tgz#d8757b1da807dde24816b0d6a84bea1a76230b23"
   integrity sha1-2HV7HagH3eJIFrDWqEvqGnYjCyM=
 
-lodash.shuffle@^4.2.0:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/lodash.shuffle/-/lodash.shuffle-4.2.0.tgz#145b5053cf875f6f5c2a33f48b6e9948c6ec7b4b"
-  integrity sha1-FFtQU8+HX29cKjP0i26ZSMbse0s=
-
 lodash.some@^4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/lodash.some/-/lodash.some-4.6.0.tgz#1bb9f314ef6b8baded13b549169b2a945eb68e4d"
@@ -14087,7 +14077,7 @@ loggly-jslogger@^2.2.2:
   resolved "https://registry.yarnpkg.com/loggly-jslogger/-/loggly-jslogger-2.2.2.tgz#f527e6c09c57587b4eb3852638ee1b3b3b77bc8b"
   integrity sha512-0lmavRkkmsYhMy0wd0zKSk9R3nU3cDIcqKTI/HZVMVwYtZlg1s2lmWCKpbs7PIPqwvUXtH1u+NFPGpDIvzwhlA==
 
-loggly@segmentio/loggly:
+"loggly@github:segmentio/loggly", loggly@segmentio/loggly:
   version "0.1.1"
   resolved "https://codeload.github.com/segmentio/loggly/tar.gz/a77b6418faeb184c867a38c175552962f590427c"
   dependencies:
@@ -14889,17 +14879,6 @@ multimatch@^3.0.0:
     arrify "^1.0.1"
     minimatch "^3.0.4"
 
-multiplex@^6.7.0:
-  version "6.7.0"
-  resolved "https://registry.yarnpkg.com/multiplex/-/multiplex-6.7.0.tgz#ff73e4e40079170c4442d160965658f8def960c2"
-  integrity sha1-/3Pk5AB5FwxEQtFgllZY+N75YMI=
-  dependencies:
-    duplexify "^3.4.2"
-    inherits "^2.0.1"
-    readable-stream "^2.0.2"
-    varint "^4.0.0"
-    xtend "^4.0.0"
-
 mutationobserver-shim@^0.3.2:
   version "0.3.3"
   resolved "https://registry.yarnpkg.com/mutationobserver-shim/-/mutationobserver-shim-0.3.3.tgz#65869630bc89d7bf8c9cd9cb82188cd955aacd2b"
@@ -15031,6 +15010,18 @@ next-tick@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
   integrity sha1-yobR/ogoFpsBICCOPchCS524NCw=
+
+ngraph.events@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/ngraph.events/-/ngraph.events-1.0.0.tgz#260b638f1d8b1394a10ce1dda9e5d9d9c85001b1"
+  integrity sha512-Z7wyywdw8IKjOW0bDiOG4FUqX5fwqW7SDMO1huemDXho7Qy1b02RoBkPS43KLIZU2wrW2orju99k8wIr+xXvVA==
+
+ngraph.graph@^18.0.1:
+  version "18.0.1"
+  resolved "https://registry.yarnpkg.com/ngraph.graph/-/ngraph.graph-18.0.1.tgz#4e2a95a4d1c89d560ff3bca2b24bebf3c8fe8c9f"
+  integrity sha512-sT0EnGxzppEpSpjFcFGbLGsMqkCjLdHqpdiHW6she8n/K/o9KT5hd0nFj1eU8BX1u0OpPOJdjlHNnHflhNh40w==
+  dependencies:
+    ngraph.events "1.0.0"
 
 nice-try@^1.0.4:
   version "1.0.5"
@@ -17257,9 +17248,9 @@ proto-list@~1.2.1:
   resolved "https://registry.yarnpkg.com/proto-list/-/proto-list-1.2.4.tgz#212d5bfe1318306a420f6402b8e26ff39647a849"
   integrity sha1-IS1b/hMYMGpCD2QCuOJv85ZHqEk=
 
-"protobufjs@https://github.com/wirelineio/protobuf.js#wireline-dist":
+"protobufjs@git+https://github.com/wirelineio/protobuf.js.git#wireline-dist":
   version "6.8.8"
-  resolved "https://github.com/wirelineio/protobuf.js#ad757d3ffe2565f4deea8a4e1b4c2383ede574c4"
+  resolved "git+https://github.com/wirelineio/protobuf.js.git#ad757d3ffe2565f4deea8a4e1b4c2383ede574c4"
   dependencies:
     "@protobufjs/aspromise" "^1.1.2"
     "@protobufjs/base64" "^1.1.2"
@@ -19253,7 +19244,7 @@ simple-peer@^9.2.0:
     randombytes "^2.0.3"
     readable-stream "^3.4.0"
 
-simple-signal-client@^2.0.2, simple-signal-client@^2.3.0:
+simple-signal-client@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/simple-signal-client/-/simple-signal-client-2.3.0.tgz#f32c3eba2299711551a0e1f8299a68be61262be9"
   integrity sha512-A4oXLm7jK1E8byZhuRvdZJwqCA/tsLDFI2agNzQPbS/RT0LULlZNdAu3GH3GPolOnfaFtt5cEldc7vNGngTWDg==
@@ -19264,7 +19255,7 @@ simple-signal-client@^2.0.2, simple-signal-client@^2.3.0:
     nanobus "^4.3.3"
     simple-peer "^9.2.0"
 
-simple-signal-server@^2.1.0, simple-signal-server@^2.1.1:
+simple-signal-server@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/simple-signal-server/-/simple-signal-server-2.1.1.tgz#9172be19242d44f7707ef19c7142a009e88bc34f"
   integrity sha512-dyxe6+YZJeWNimKDqQ5Xp5/tBEwWShBNpS53PxoabtK8IErwWEJpQ/RqE2PSWBmSjcHbShkz33fFAbr6JL+smw==

@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0",
-    "@wirelineio/botkit": "^0.2.9",
+    "@wirelineio/botkit": "^0.2.10",
     "debug": "^4.1.1",
     "pify": "^4.0.1",
     "shogi-moves": "^0.1.19",
