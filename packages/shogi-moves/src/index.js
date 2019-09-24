@@ -5,3 +5,4 @@
 import { Shogi } from './shogi';
 
 export default Shogi;
+export { Shogi };

@@ -18,10 +18,11 @@ import Defs from './defs';
 const styles = () => ({
 
   root: {
+    flex: 1,
     display: 'flex',
-    flexDirection: 'column',
+    alignItems: 'center',
     justifyContent: 'center'
-  }
+  },
 });
 
 /**
@@ -58,13 +59,28 @@ class Pad extends Component {
     }
   };
 
+
   render() {
-    const { classes } = this.props;
+    const { classes, maxWidth, border = 40 } = this.props;
     const { game } = this.state;
 
+    const calcWidth = () => {
+      if (!this._board) { return 0; }
+      const size = Math.min(this._board.offsetWidth, this._board.offsetHeight) - (2 * border);
+      console.log(size);
+      return maxWidth ? Math.min(size, maxWidth) : size;
+    };  
+  
+
+
     return (
-      <div className={classes.root}>
-        <Shogiboard position={game.toSFEN()} sparePieces={true} onDrop={this.handleDrop} />
+      <div ref={el => this._board = el} className={classes.root}>
+        <Shogiboard
+          calcWidth={calcWidth}
+          position={game.toSFEN()}
+          sparePieces={true}
+          onDrop={this.handleDrop}
+        />
       </div>
     );
   }

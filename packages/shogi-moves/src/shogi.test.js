@@ -2,7 +2,7 @@
 // Copyright 2019 Wireline, Inc.
 //
 
-import { Shogi } from './shogi';
+import Shogi from './';
 
 test('ASCII output', () => {
   const game = new Shogi('+lk7/9/9/9/9/9/9/9/8K b - 1');
