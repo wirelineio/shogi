@@ -67,7 +67,6 @@ class Pad extends Component {
     const calcWidth = () => {
       if (!this._board) { return 0; }
       const size = Math.min(this._board.offsetWidth, this._board.offsetHeight) - (2 * border);
-      console.log(size);
       return maxWidth ? Math.min(size, maxWidth) : size;
     };  
   

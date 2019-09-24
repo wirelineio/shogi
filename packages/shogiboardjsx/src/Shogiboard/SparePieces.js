@@ -35,22 +35,17 @@ class SparePieces extends Component {
           const spares = [];
 
           let i = 0;
-          let count = 1;
           while (i < captured.length) {
             const c = captured[i];
-            if (Number(c)) {
-              count = Number(c);
-            } else {
+            if (!Number(c)) {
               if ((c.toUpperCase() === c && !this.props.top) ||
                 (c.toUpperCase() !== c && this.props.top)) {
-                spares.push((this.props.top ? 'b' : 'w') + c.toUpperCase())
+                spares.push((this.props.top ? 'b' : 'w') + c.toUpperCase());
               }
             }
 
             i++;
           }
-
-          console.log(context.width)
 
           return (
             <div style={spareContainerStyles(this.props.top, context.width)}>
@@ -97,7 +92,7 @@ const spareContainerStyles = (top, width) => ({
   backgroundColor: 'rgba(181, 136, 99, .1)'
 });
 
-const spareStyles = (top, width) => ({
+const spareStyles = (top) => ({
   display: 'flex',
   flexDirection: 'column' + (top ? '' : '-reverse'),
 });
