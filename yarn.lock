@@ -3391,15 +3391,15 @@
     immer "^3.1.3"
     url-join "^4.0.1"
 
-"@wirelineio/botkit@^0.2.10":
-  version "0.2.10"
-  resolved "https://registry.yarnpkg.com/@wirelineio/botkit/-/botkit-0.2.10.tgz#10805c502a27d2d95786cec949d671baadb2973f"
-  integrity sha512-mgI2IsITiS9xYnKac0Dxow7volv8pyGDHB4hDjiZ2loSFn27U6L6+bwkbyimRho2ibXzE0JNt5byIQWyAtAokg==
+"@wirelineio/botkit@^0.2.11":
+  version "0.2.11"
+  resolved "https://registry.yarnpkg.com/@wirelineio/botkit/-/botkit-0.2.11.tgz#1994cfd22a0ef2bd850972a399eb494ebbf1915f"
+  integrity sha512-xSK0+3Xno0teLtqGF51CLmfIdBHUSiUataEsGjIC5ulsewOEQrsgvs/Gy+bQbYY6PByDnXEg2okP5JvaYjy7YQ==
   dependencies:
     "@babel/runtime" "^7.0.0"
-    "@wirelineio/framework" "^0.2.19"
-    "@wirelineio/protocol" "^0.2.19"
-    "@wirelineio/utils" "^0.2.19"
+    "@wirelineio/framework" "^0.2.20"
+    "@wirelineio/protocol" "^0.2.20"
+    "@wirelineio/utils" "^0.2.20"
     configstore "^5.0.0"
     firebase-humanhash "^0.0.2"
     fs-extra "^8.1.0"
@@ -3410,12 +3410,12 @@
     wrtc "^0.4.1"
     yargs "^13.3.0"
 
-"@wirelineio/broadcast@^0.2.19":
-  version "0.2.19"
-  resolved "https://registry.yarnpkg.com/@wirelineio/broadcast/-/broadcast-0.2.19.tgz#9e36674cf58005f48ec850e0de2efbfc843d421e"
-  integrity sha512-3gXHodrv4QCkZ/HX5cP57cSes2tiy8in/jdcxPb9n3nIJTUKE8DaBApfOBgsEuTUYLfwhwKqDPpMhU+csmOIfw==
+"@wirelineio/broadcast@^0.2.20":
+  version "0.2.20"
+  resolved "https://registry.yarnpkg.com/@wirelineio/broadcast/-/broadcast-0.2.20.tgz#57382f4d6863ee81988c3aaaf0b12180fdf08d68"
+  integrity sha512-c2TDlUIVm4Yb2CJnuXUI8dfYcDBUnB+d12d9ZAUZ9Ih/+EK0tXH+FEy71/Xoup3Q3/DAhaIZmHLMbF6+za+3qA==
   dependencies:
-    "@wirelineio/codec-protobuf" "^0.2.19"
+    "@wirelineio/codec-protobuf" "^0.2.20"
     debug "^4.1.1"
     source-map-support "^0.5.12"
 
@@ -3477,20 +3477,20 @@
     read-pkg-up "^6.0.0"
     yargs "^11.0.0"
 
-"@wirelineio/codec-protobuf@^0.2.19":
-  version "0.2.19"
-  resolved "https://registry.yarnpkg.com/@wirelineio/codec-protobuf/-/codec-protobuf-0.2.19.tgz#791f6b50601d8731b0e770fb9e9bcc16e521b2eb"
-  integrity sha512-jCuuiqoMjL15BuA3wbwVZinutAG50MhcHskUMgC9CncmRa8SUih/SMjXixgMRnsee/C60/Hx7sUWE2wlViLTug==
+"@wirelineio/codec-protobuf@^0.2.20":
+  version "0.2.20"
+  resolved "https://registry.yarnpkg.com/@wirelineio/codec-protobuf/-/codec-protobuf-0.2.20.tgz#05cb67d202da727224e0d1bad81d28c7328a6f13"
+  integrity sha512-JHoi+it8RmbgrTIJSEhmAiorQooG1GlP/GihPk4/RM6fmnoOhv2vGdAyf2n/Qr7JNeoICrZJiTcg9gBCnt2BjA==
   dependencies:
     protobufjs "https://github.com/wirelineio/protobuf.js#wireline-dist"
 
-"@wirelineio/feed-store@^0.2.19":
-  version "0.2.19"
-  resolved "https://registry.yarnpkg.com/@wirelineio/feed-store/-/feed-store-0.2.19.tgz#cb5e87010883b57f473e1cbe93e4ce04af6e57ae"
-  integrity sha512-WNsHid0kGTVsl7X2kgqWrOBtmAp+XzfaQ4Mzr4jthTaRcO2rBsvofO+m5RqkPowkzc0296Q6fu8ySTwTzTU2Xw==
+"@wirelineio/feed-store@^0.2.20":
+  version "0.2.20"
+  resolved "https://registry.yarnpkg.com/@wirelineio/feed-store/-/feed-store-0.2.20.tgz#7bc35e14f54d01bba4e659f34ad3a25e9ea442cb"
+  integrity sha512-3tstHFblAXzo17wFCOTytkHKTwOzkbPsBiEGvs6j9GHNOjP7gJumZkPBBU+C82/1q1FRFJRnI0pO1k/DwF3aug==
   dependencies:
-    "@wirelineio/codec-protobuf" "^0.2.19"
-    "@wirelineio/utils" "^0.2.19"
+    "@wirelineio/codec-protobuf" "^0.2.20"
+    "@wirelineio/utils" "^0.2.20"
     debug "^4.1.1"
     hypercore "^6.24.0"
     hypercore-crypto "^1.0.0"
@@ -3498,15 +3498,15 @@
     pify "^4.0.1"
     random-access-file "^2.1.0"
 
-"@wirelineio/framework@^0.2.19":
-  version "0.2.19"
-  resolved "https://registry.yarnpkg.com/@wirelineio/framework/-/framework-0.2.19.tgz#277769d7b6e24e6e36d4c77727cf782c8f0012ce"
-  integrity sha512-JHHlZ2XUz/JwZ+gG7XJrQAwZb62Rdx5d0S8ApivGmrm76FwMZB6ykGp0Ysl8GKBSd50OBIOAsV6R2U3D/l0jSA==
+"@wirelineio/framework@^0.2.20":
+  version "0.2.20"
+  resolved "https://registry.yarnpkg.com/@wirelineio/framework/-/framework-0.2.20.tgz#bb520681885af0b3b5ecdbdfd317a206a1686608"
+  integrity sha512-aoy/abgLla2qkiG9Ke4D75XSBW1/QjVY1JgPnSPmpXLMPmEKNwKLThr/gcukD9MjDJLBvgFvPOVRId1w9eFjeg==
   dependencies:
     "@geut/discovery-swarm-webrtc" "^2.2.3"
-    "@wirelineio/megafeed" "^0.2.19"
-    "@wirelineio/protocol" "^0.2.19"
-    "@wirelineio/utils" "^0.2.19"
+    "@wirelineio/megafeed" "^0.2.20"
+    "@wirelineio/protocol" "^0.2.20"
+    "@wirelineio/utils" "^0.2.20"
     "@wirelineio/wire-inspect" "^0.1.17"
     bufferutil "^4.0.1"
     charwise "^3.0.1"
@@ -3533,14 +3533,14 @@
     wrtc "^0.4.2"
     yjs "13.0.0-97"
 
-"@wirelineio/megafeed@^0.2.19":
-  version "0.2.19"
-  resolved "https://registry.yarnpkg.com/@wirelineio/megafeed/-/megafeed-0.2.19.tgz#1511f4a6604bf9bf5d1875c8fa44d51e03ff0e76"
-  integrity sha512-xJ2BfHCRQUCsQcO/q8oGtcWKJtbRQLreRaA42IpsfzbeaWZuLBEodlnju/V032xwqg1YDMdeiZeJGSBG66uPkg==
+"@wirelineio/megafeed@^0.2.20":
+  version "0.2.20"
+  resolved "https://registry.yarnpkg.com/@wirelineio/megafeed/-/megafeed-0.2.20.tgz#bcd622fce03c358ffac559f8283b0762b271ec67"
+  integrity sha512-gKavGbg6tLpF7Z5b8Y0BhQtpoXg0p10VlMkjLqpHAHeKwPXwsBp11W0Q00NAuGqauNjcIfDwe3aekcDOlbyLMQ==
   dependencies:
-    "@wirelineio/feed-store" "^0.2.19"
-    "@wirelineio/protocol" "^0.2.19"
-    "@wirelineio/utils" "^0.2.19"
+    "@wirelineio/feed-store" "^0.2.20"
+    "@wirelineio/protocol" "^0.2.20"
+    "@wirelineio/utils" "^0.2.20"
     debug "^4.1.1"
     end-of-stream "^1.4.1"
     hypercore-crypto "^1.0.0"
@@ -3551,14 +3551,14 @@
     random-access-memory "^3.1.1"
     source-map-support "^0.5.12"
 
-"@wirelineio/protocol@^0.2.19":
-  version "0.2.19"
-  resolved "https://registry.yarnpkg.com/@wirelineio/protocol/-/protocol-0.2.19.tgz#c176c288368be0aab5ba76de03f2288ac39df98c"
-  integrity sha512-7ekWHUa2dqzJRDQQUvtFMlPQChDZowivgKoI9sKgbXVGYcLpp8YL7i9DJDNZCYk818ABs7RlKUScfB+JbWDVZw==
+"@wirelineio/protocol@^0.2.20":
+  version "0.2.20"
+  resolved "https://registry.yarnpkg.com/@wirelineio/protocol/-/protocol-0.2.20.tgz#e6ba14cf3abda704b5accffd1c4ea898cfc9e597"
+  integrity sha512-buowcGGHeqK80Oj5GZ8ZpLCvCa0Q+We0Bcf+58CqhPAY06/P1QhhOE2+f5n3lyHsDodXRBuw99lqzp8dj/iF8g==
   dependencies:
-    "@wirelineio/broadcast" "^0.2.19"
-    "@wirelineio/codec-protobuf" "^0.2.19"
-    "@wirelineio/utils" "^0.2.19"
+    "@wirelineio/broadcast" "^0.2.20"
+    "@wirelineio/codec-protobuf" "^0.2.20"
+    "@wirelineio/utils" "^0.2.20"
     debug "^4.1.1"
     end-of-stream "^1.4.1"
     hypercore-crypto "^1.0.0"
@@ -3639,10 +3639,10 @@
     mutexify "^1.2.0"
     pify "^4.0.1"
 
-"@wirelineio/utils@^0.2.19":
-  version "0.2.19"
-  resolved "https://registry.yarnpkg.com/@wirelineio/utils/-/utils-0.2.19.tgz#98f4c0da7a61a542ce2013a69ffb580e9204eda6"
-  integrity sha512-bQKVJCZqybWTKHtVB9zZjEJYxl3CdD7nG6qfuZ/PX8pHNi32G7cgR+biK3UXBv/2S4hy40XbnU3xq73AVMUZpw==
+"@wirelineio/utils@^0.2.20":
+  version "0.2.20"
+  resolved "https://registry.yarnpkg.com/@wirelineio/utils/-/utils-0.2.20.tgz#3db03ac87b141a3113bb0a80a89d5c1f47e87318"
+  integrity sha512-dOPgw5rYUXx1oLBnjOtVFpsSn9sO5tI4MHGbdf667KshZLyzQF85ih9yugx6VCFYZdPzAcu8M5HCAGhFvkiIhg==
   dependencies:
     chance "^1.0.18"
     debug "^4.1.1"
