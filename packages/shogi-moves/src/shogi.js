@@ -96,7 +96,7 @@ export class Shogi {
     return this._game.turn;
   }
 
-  toSFEN() {
+  sfen() {
     return this._game.toSFENString();
   }
 

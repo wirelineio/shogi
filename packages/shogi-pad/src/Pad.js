@@ -68,15 +68,15 @@ class Pad extends Component {
       if (!this._board) { return 0; }
       const size = Math.min(this._board.offsetWidth, this._board.offsetHeight) - (2 * border);
       return maxWidth ? Math.min(size, maxWidth) : size;
-    };  
-  
+    };
+
 
 
     return (
       <div ref={el => this._board = el} className={classes.root}>
         <Shogiboard
           calcWidth={calcWidth}
-          position={game.toSFEN()}
+          position={game.sfen()}
           sparePieces={true}
           onDrop={this.handleDrop}
         />
