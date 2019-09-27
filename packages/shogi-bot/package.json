@@ -1,6 +1,6 @@
 {
   "name": "@wirelineio/shogi-bot",
-  "version": "0.1.19",
+  "version": "0.1.20",
   "description": "Shogi Bot",
   "license": "UNLICENSED",
   "repository": "https://github.com/wirelineio/shogi",
@@ -31,7 +31,7 @@
     "@wirelineio/botkit": "^0.2.11",
     "debug": "^4.1.1",
     "pify": "^4.0.1",
-    "shogi-moves": "^0.1.19",
+    "shogi-moves": "^0.1.20",
     "source-map-support": "^0.5.11"
   },
   "scripts": {
