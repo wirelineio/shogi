@@ -2,9 +2,9 @@
 // Copyright 2019 Wireline, Inc.
 //
 
-import Shogi from 'shogi-moves';
-
 import { LogBot } from '@wirelineio/botkit';
+
+import { Shogi } from '@wirelineio/shogi-core';
 
 import { view } from './defs';
 
@@ -14,16 +14,24 @@ export default class ShogiBot extends LogBot {
     super(config, view);
   }
 
+  /**
+   * @param {View} view
+   */
   async handleUpdate(view) {
     const game = new Shogi();
-    view.log.forEach(({ from, to }) => game.move({ from, to }));
-    console.log(game.ascii());
+    view.log.forEach(message => game.applyMessage(message));
 
-    const moves = game.getMoves();
+    console.log(game.state.ascii());
+
+    // TODO(burdon): Consider drops.
+    const moves = game.state.getMoves();
     if (moves.length) {
       const move = moves[Math.floor(Math.random() * moves.length)];
-      const { from, to } = game.move(move);
-      view.appendChange({ from, to });
+
+      const message = game.createMessage(move);
+      game.applyMessage(message);
+
+      await view.appendChange(message);
     }
   }
 }

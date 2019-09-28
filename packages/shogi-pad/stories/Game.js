@@ -5,13 +5,10 @@
 import React, { Component } from 'react';
 import { button } from '@storybook/addon-knobs';
 
-import { Shogi } from '@wirelineio/shogi-core';
-
 import Shogiboard from 'shogiboardjsx';
+import Shogi from 'shogi-moves';
 
-export default class Pad extends Component {
-
-  // TODO(burdon): Doesn't handle drops.
+export default class Game extends Component {
 
   state = {
     // https://en.wikipedia.org/wiki/Shogi_notation
@@ -44,17 +41,15 @@ export default class Pad extends Component {
     }
   }
 
-  handleDrop = ({ piece, sourceSquare: from, targetSquare: to }) => {
+  handleDrop = ({ sourceSquare: from, targetSquare: to, piece }) => {
     const { game } = this.state;
 
-    if (from === 'spare') {
-      if (game.drop({ to, piece })) {
-        this.setState({ game });
-      }
-    } else {
-      if (game.move({ from, to })) {
-        this.setState({ game });
-      }
+    const move = (from === 'spare') ?
+      game.drop({ to, piece }) :
+      game.move({ from, to });
+
+    if (move) {
+      this.setState({ game });
     }
   };
 

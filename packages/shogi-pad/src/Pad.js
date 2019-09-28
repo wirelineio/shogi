@@ -4,14 +4,13 @@
 
 import React, { Component } from 'react';
 import { compose } from 'react-apollo';
-
 import { withStyles } from '@material-ui/core/styles';
+
+import Shogiboard from 'shogiboardjsx';
 
 import { withLogView } from '@wirelineio/appkit';
 
 import { Shogi } from '@wirelineio/shogi-core';
-
-import Shogiboard from 'shogiboardjsx';
 
 import Defs from './defs';
 
@@ -22,14 +21,14 @@ const styles = () => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center'
-  },
+  }
 });
 
 /**
  * The Pad component is wrapped by the `withLogView`
  * higher-order-component, which injects the `view` property.
  */
-class Pad extends Component {
+class ShogiPad extends Component {
 
   static getDerivedStateFromProps(props, state) {
     const { view } = props;
@@ -39,7 +38,8 @@ class Pad extends Component {
     }
 
     const game = new Shogi();
-    view.log.forEach(({ from, to }) => game.move({ from, to }));
+    view.log.forEach(message => game.applyMessage(message));
+
     return { game };
   }
 
@@ -47,18 +47,21 @@ class Pad extends Component {
     game: new Shogi()
   };
 
-  handleDrop = ({ sourceSquare: from, targetSquare: to }) => {
+  handleDrop = ({ sourceSquare: from, targetSquare: to, piece }) => {
+    const { view } = this.props;
     const { game } = this.state;
 
-    const move = game.move({ from, to });
+    const move = (from === 'spare') ?
+      game.state.drop({ to, piece }) :
+      game.state.move({ from, to });
+
     if (move) {
-      const { from, to } = move;
       this.setState({ game, local: true }, () => {
-        this.props.view.appendChange({ from, to });
+        const message = game.createMessage(move);
+        view.appendChange(message);
       });
     }
   };
-
 
   render() {
     const { classes, maxWidth, border = 40 } = this.props;
@@ -70,13 +73,11 @@ class Pad extends Component {
       return maxWidth ? Math.min(size, maxWidth) : size;
     };
 
-
-
     return (
       <div ref={el => this._board = el} className={classes.root}>
         <Shogiboard
           calcWidth={calcWidth}
-          position={game.sfen()}
+          position={game.state.sfen()}
           sparePieces={true}
           onDrop={this.handleDrop}
         />
@@ -88,4 +89,4 @@ class Pad extends Component {
 export default compose(
   withStyles(styles),
   withLogView({ view: Defs.view })
-)(Pad);
+)(ShogiPad);

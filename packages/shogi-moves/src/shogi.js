@@ -78,8 +78,6 @@ function position(square) {
  */
 export class Shogi {
 
-  // TODO(burdon): Black (bottom) should play first.
-
   static EMPTY = '9/9/9/9/9/9/9/9/9 b - 1';
 
   static INIT = 'lnsgkgsnl/1r5b1/ppppppppp/9/9/9/PPPPPPPPP/1B5R1/LNSGKGSNL b - 1';
@@ -153,7 +151,6 @@ export class Shogi {
 
     try {
       this._game.drop(x, y, kind, this._game.turn);
-
       return { drop: { x, y }, piece };
     } catch (ex) {
       // console.log('Invalid', ex);
@@ -177,5 +174,10 @@ export class Shogi {
     }
 
     return moves;
+  }
+
+  // TODO(burdon): Get drops.
+  getDrops() {
+    return [];
   }
 }
