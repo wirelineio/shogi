@@ -6,12 +6,12 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
 
-import ShogiPad from './Pad';
+import Game from './Game';
 
 storiesOf('Components', module)
 
   .addDecorator(withKnobs)
 
   .add('Test', () => {
-    return <ShogiPad />;
+    return <Game />;
   });
