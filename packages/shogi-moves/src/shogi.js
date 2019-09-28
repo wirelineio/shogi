@@ -147,7 +147,7 @@ export class Shogi {
   drop({ to, piece }) {
     const { x, y } = position(to);
 
-    const kind = toSfen[piece[1]];
+    const kind = toSfen[piece[0]];
 
     try {
       this._game.drop(x, y, kind, this._game.turn);
@@ -166,8 +166,9 @@ export class Shogi {
       for (let y = 1; y <= 9; y++) {
         const square = this._game.get(x, y);
         if (square && square.color === this._game.turn) {
-          this._game.getMovesFrom(x, y).forEach(move => {
-            moves.push(move);
+          this._game.getMovesFrom(x, y).forEach(({ from, to }) => {
+            const { kind } = square;
+            moves.push({ from, to, piece: sfenPiece[kind] });
           });
         }
       }
@@ -176,8 +177,14 @@ export class Shogi {
     return moves;
   }
 
-  // TODO(burdon): Get drops.
   getDrops() {
-    return [];
+    const moves = [];
+
+    this._game.getDropsBy(this._game.turn).forEach(move => {
+      const { to, kind } = move;
+      moves.push({ drop: to, piece: sfenPiece[kind] });
+    });
+
+    return moves;
   }
 }

@@ -5,17 +5,17 @@
 import Shogi from 'shogi-moves';
 
 /**
+ * @typedef View
+ * @type {object}
+ * @property {[Message]} log
+ * @property {Function} appendChange
+ *
  * @typedef Message
  * @type {object}
  * @property {object} from
  * @property {object} to
  * @property {object} drop
  * @property {String} piece
- *
- * @typedef View
- * @type {object}
- * @property {[Message]} log
- * @property {Function} appendChange
  *
  * @typedef Shogi
  * @type {object}
@@ -26,6 +26,13 @@ import Shogi from 'shogi-moves';
  * @property {Function} getMoves
  * @property {Function} getDrops
  * @property {String} turn
+ *
+ * @typedef Message
+ * @type {object}
+ * @property {object} from
+ * @property {object} to
+ * @property {object} drop
+ * @property {String} piece
  */
 
 /**
@@ -37,10 +44,14 @@ class StateMachine {
    * Note: this is assumed to be a third-party library.
    * @type {Shogi}
    */
-  _game = new Shogi();
+  _game = null;
 
   get state() {
     return this._game;
+  }
+
+  constructor(sfen) {
+    this._game = new Shogi(sfen);
   }
 
   /**
@@ -52,7 +63,7 @@ class StateMachine {
     const { from, to, drop, piece } = message;
 
     if (drop) {
-      this._game.drop({ drop, piece });
+      this._game.drop({ to: drop, piece });
     } else {
       this._game.move({ from, to });
     }
@@ -63,6 +74,7 @@ class StateMachine {
   /**
    * Creates a move protocol message.
    * @param move
+   * @return {Message}
    */
   createMessage(move) {
     const { from, to, drop, piece } = move;
