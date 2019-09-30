@@ -122,6 +122,11 @@ export class Shogi {
       '\n+-----------------------------+';
   }
 
+  /**
+   * Move piece.
+   * @param from
+   * @param to
+   */
   move({ from, to }) {
     const { x:x1, y:y1 } = position(from);
     const { x:x2, y:y2 } = position(to);
@@ -144,10 +149,15 @@ export class Shogi {
     }
   }
 
+  /**
+   * Drop piece.
+   * @param to
+   * @param {char} piece
+   */
   drop({ to, piece }) {
     const { x, y } = position(to);
 
-    const kind = toSfen[piece[0]];
+    const kind = toSfen[piece];
 
     try {
       this._game.drop(x, y, kind, this._game.turn);

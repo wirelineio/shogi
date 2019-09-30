@@ -29,15 +29,23 @@ export default class Game extends Component {
   suggest() {
     const { game } = this.state;
 
-    // TODO(burdon): Score position: Attack or improve protection.
+    let move = null;
+    const drops = game.getDrops();
+    if (drops.length) {
+      const { drop, piece } = drops[ Math.floor(drops.length * Math.random()) ];
+      move = game.drop({ to: drop, piece });
+    }
 
-    const moves = game.getMoves();
-    if (moves.length) {
-      const { from, to } = moves[ Math.floor(moves.length * Math.random()) ];
-
-      if (game.move({ from, to })) {
-        this.setState({ game });
+    if (!move) {
+      const moves = game.getMoves();
+      if (moves.length) {
+        const { from, to } = moves[ Math.floor(moves.length * Math.random()) ];
+        move = game.move({ from, to });
       }
+    }
+
+    if (move) {
+      this.setState({ game });
     }
   }
 

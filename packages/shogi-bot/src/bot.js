@@ -21,8 +21,6 @@ export default class ShogiBot extends LogBot {
     const game = new Shogi();
     view.log.forEach(message => game.applyMessage(message));
 
-    console.log(game.state.ascii());
-
     // TODO(burdon): Consider drops.
     const moves = game.state.getMoves();
     if (moves.length) {
@@ -33,5 +31,7 @@ export default class ShogiBot extends LogBot {
 
       await view.appendChange(message);
     }
+
+    console.log(game.state.ascii());
   }
 }
