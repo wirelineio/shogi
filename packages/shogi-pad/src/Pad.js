@@ -52,7 +52,7 @@ class ShogiPad extends Component {
     const { game } = this.state;
 
     const move = (from === 'spare') ?
-      game.state.drop({ to, piece }) :
+      game.state.drop({ to, piece: piece[1] }) :
       game.state.move({ from, to });
 
     if (move) {
