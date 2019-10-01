@@ -193,7 +193,7 @@ class Shogiboard extends Component {
     dropOffBoard: 'snapback',
     transitionDuration: 300,
     boardStyle: {},
-    lightSquareStyle: { backgroundColor: 'rgb(240, 217, 181)', boxShadow: 'inset 0 0 .5px .5px rgba(0,0,0,.2)' },
+    lightSquareStyle: { backgroundColor: 'rgb(240, 217, 181)', boxShadow: 'inset 0 0 1px 1px rgba(0,0,0,0.1)' },
     darkSquareStyle: { backgroundColor: 'rgba(181, 136, 99, .1)' },
     squareStyles: { },
     dropSquareStyle: { boxShadow: 'inset 0 0 1px 2px #333' },
