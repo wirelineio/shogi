@@ -30,7 +30,7 @@ class SparePieces extends Component {
     return (
       <Shogiboard.Consumer>
         {context => {
-          const captured = context.position.split(' ')[2];
+          const captured = context.position.split(' ')[2] || '';
 
           const spares = [];
 
