@@ -10,8 +10,9 @@ import Game from './Game';
 
 storiesOf('Components', module)
 
+  .addParameters({ options: { addonPanelInRight: true } })
   .addDecorator(withKnobs)
 
-  .add('Test', () => {
+  .add('Game', () => {
     return <Game />;
   });
