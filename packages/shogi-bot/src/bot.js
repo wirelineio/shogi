@@ -32,6 +32,6 @@ export default class ShogiBot extends LogBot {
       await view.appendChange(message);
     }
 
-    console.log(game.state.ascii());
+    console.log('\n' + game.state.ascii());
   }
 }
