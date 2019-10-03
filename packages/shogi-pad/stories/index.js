@@ -6,12 +6,13 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
 
-import ShogiPad from './Pad';
+import Game from './Game';
 
 storiesOf('Components', module)
 
+  .addParameters({ options: { addonPanelInRight: true } })
   .addDecorator(withKnobs)
 
-  .add('Test', () => {
-    return <ShogiPad />;
+  .add('Game', () => {
+    return <Game />;
   });

@@ -78,8 +78,6 @@ function position(square) {
  */
 export class Shogi {
 
-  // TODO(burdon): Black (bottom) should play first.
-
   static EMPTY = '9/9/9/9/9/9/9/9/9 b - 1';
 
   static INIT = 'lnsgkgsnl/1r5b1/ppppppppp/9/9/9/PPPPPPPPP/1B5R1/LNSGKGSNL b - 1';
@@ -124,6 +122,11 @@ export class Shogi {
       '\n+-----------------------------+';
   }
 
+  /**
+   * Move piece.
+   * @param from
+   * @param to
+   */
   move({ from, to }) {
     const { x:x1, y:y1 } = position(from);
     const { x:x2, y:y2 } = position(to);
@@ -146,14 +149,18 @@ export class Shogi {
     }
   }
 
+  /**
+   * Drop piece.
+   * @param to
+   * @param {char} piece
+   */
   drop({ to, piece }) {
     const { x, y } = position(to);
 
-    const kind = toSfen[piece[1]];
+    const kind = toSfen[piece];
 
     try {
       this._game.drop(x, y, kind, this._game.turn);
-
       return { drop: { x, y }, piece };
     } catch (ex) {
       // console.log('Invalid', ex);
@@ -169,12 +176,24 @@ export class Shogi {
       for (let y = 1; y <= 9; y++) {
         const square = this._game.get(x, y);
         if (square && square.color === this._game.turn) {
-          this._game.getMovesFrom(x, y).forEach(move => {
-            moves.push(move);
+          this._game.getMovesFrom(x, y).forEach(({ from, to }) => {
+            const { kind } = square;
+            moves.push({ from, to, piece: sfenPiece[kind] });
           });
         }
       }
     }
+
+    return moves;
+  }
+
+  getDrops() {
+    const moves = [];
+
+    this._game.getDropsBy(this._game.turn).forEach(move => {
+      const { to, kind } = move;
+      moves.push({ drop: to, piece: sfenPiece[kind] });
+    });
 
     return moves;
   }
