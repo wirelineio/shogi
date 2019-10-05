@@ -38,7 +38,9 @@ class ShogiPad extends Component {
     }
 
     const game = new Shogi();
-    view.log.forEach(message => game.applyMessage(message));
+    view.log
+      .sort((a, b) => a.seq - b.seq)
+      .forEach(message => game.applyMessage(message));
 
     return { game };
   }
