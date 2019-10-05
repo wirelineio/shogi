@@ -1,6 +1,6 @@
 {
   "name": "shogiboardjsx",
-  "version": "0.1.23",
+  "version": "0.1.24",
   "description": "Shogiboardjsx is a shogiboard for React. Inspired by Chessboardjsx",
   "module": "dist/es/Shogiboard/index.js",
   "main": "dist/shogiboard.min.js",

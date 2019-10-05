@@ -1,12 +1,12 @@
 {
   "name": "@wirelineio/shogi-core",
   "description": "Shogi core library",
-  "version": "0.1.23",
+  "version": "0.1.24",
   "repository": "https://github.com/wirelineio/shogi",
   "main": "dist/index.js",
   "dependencies": {
     "@babel/runtime": "^7.1.5",
-    "shogi-moves": "^0.1.23"
+    "shogi-moves": "^0.1.24"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
