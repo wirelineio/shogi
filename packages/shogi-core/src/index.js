@@ -10,13 +10,6 @@ import Shogi from 'shogi-moves';
  * @property {[Message]} log
  * @property {Function} appendChange
  *
- * @typedef Message
- * @type {object}
- * @property {object} from
- * @property {object} to
- * @property {object} drop
- * @property {String} piece
- *
  * @typedef Shogi
  * @type {object}
  * @property {Function} drop
@@ -29,6 +22,7 @@ import Shogi from 'shogi-moves';
  *
  * @typedef Message
  * @type {object}
+ * @property {number} seq
  * @property {object} from
  * @property {object} to
  * @property {object} drop
@@ -46,8 +40,14 @@ class StateMachine {
    */
   _game = null;
 
+  _seq = 0;
+
   get state() {
     return this._game;
+  }
+
+  get seq() {
+    return this._seq;
   }
 
   constructor(sfen) {
@@ -61,6 +61,7 @@ class StateMachine {
    */
   applyMessage(message) {
     const { from, to, drop, piece } = message;
+    this._seq = this._seq + 1;
 
     if (drop) {
       this._game.drop({ to: drop, piece });
@@ -78,11 +79,12 @@ class StateMachine {
    */
   createMessage(move) {
     const { from, to, drop, piece } = move;
+    const seq = this._seq + 1;
 
     if (drop) {
-      return { drop, piece };
+      return { drop, piece, seq };
     } else {
-      return { from, to, piece };
+      return { from, to, piece, seq };
     }
   }
 }

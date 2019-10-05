@@ -19,7 +19,9 @@ export default class ShogiBot extends LogBot {
    */
   async handleUpdate(view) {
     const game = new Shogi();
-    view.log.forEach(message => game.applyMessage(message));
+    view.log
+      .sort((a, b) => a.seq - b.seq)
+      .forEach(message => game.applyMessage(message));
 
     // TODO(burdon): Consider drops.
     const moves = game.state.getMoves();
