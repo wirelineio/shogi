@@ -3,7 +3,7 @@
 //
 
 import React, { Component } from 'react';
-import { compose } from 'react-apollo';
+import compose from 'lodash.flowright';
 import { withStyles } from '@material-ui/core/styles';
 
 import Shogiboard from 'shogiboardjsx';
