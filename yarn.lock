@@ -3436,7 +3436,7 @@
     "@webassemblyjs/wast-parser" "1.8.5"
     "@xtuc/long" "4.2.2"
 
-"@wirelineio/appkit@^0.2.10":
+"@wirelineio/appkit@^0.2.12":
   version "0.2.12"
   resolved "https://registry.yarnpkg.com/@wirelineio/appkit/-/appkit-0.2.12.tgz#a0c2158206f52c0ffa3161d41df0d55687e1a10b"
   integrity sha512-P5as8oK31wHNRo4CXp07hPPx68tg1/abxUdQPOnX54ejiXYq0kYspkT5G7Yb61D3d4RdrphfFVThoMiott5x6A==
