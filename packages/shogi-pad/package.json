@@ -1,6 +1,6 @@
 {
   "name": "@wirelineio/shogi-pad",
-  "version": "0.1.27",
+  "version": "0.1.28",
   "description": "Shogi pad",
   "repository": "https://github.com/wirelineio/shogi",
   "license": "GPL-3.0",
@@ -23,9 +23,9 @@
     "@material-ui/core": "^3.9.3",
     "@material-ui/icons": "^3.0.1",
     "@wirelineio/appkit": "^0.2.12",
-    "@wirelineio/shogi-core": "^0.1.27",
+    "@wirelineio/shogi-core": "^0.1.28",
     "lodash.flowright": "^3.5.0",
-    "shogiboardjsx": "^0.1.27"
+    "shogiboardjsx": "^0.1.28"
   },
   "peerDependencies": {
     "react": "^16.8.6",
@@ -45,5 +45,6 @@
     "react": "^16.8.6",
     "react-apollo": "^3.1.3",
     "react-dom": "^16.8.6"
-  }
+  },
+  "gitHead": "3d68ee1ba31c79592bc8b16fd68ffab827bb1f1e"
 }

@@ -1,6 +1,6 @@
 {
   "name": "@wirelineio/shogi-bot",
-  "version": "0.1.27",
+  "version": "0.1.28",
   "description": "Shogi Bot",
   "license": "UNLICENSED",
   "repository": "https://github.com/wirelineio/shogi",
@@ -31,7 +31,7 @@
     "@wirelineio/botkit": "^0.2.11",
     "debug": "^4.1.1",
     "pify": "^4.0.1",
-    "shogi-moves": "^0.1.27",
+    "shogi-moves": "^0.1.28",
     "source-map-support": "^0.5.11"
   },
   "scripts": {
@@ -42,5 +42,6 @@
     "start": "wire bot run -v",
     "debug": "WIRE_SIGNALHUB=http://localhost:4000 yarn start",
     "test": "jest --silent --passWithNoTests"
-  }
+  },
+  "gitHead": "3d68ee1ba31c79592bc8b16fd68ffab827bb1f1e"
 }
