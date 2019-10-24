@@ -1,6 +1,6 @@
 {
   "name": "shogiboardjsx",
-  "version": "0.1.29",
+  "version": "0.1.30",
   "description": "Shogiboardjsx is a shogiboard for React. Inspired by Chessboardjsx",
   "module": "dist/es/Shogiboard/index.js",
   "main": "dist/shogiboard.min.js",
@@ -95,5 +95,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "3d68ee1ba31c79592bc8b16fd68ffab827bb1f1e"
+  "gitHead": "90b79b975b3e99c717ee7fc5cb585d45f6541314"
 }

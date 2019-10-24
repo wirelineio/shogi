@@ -1,7 +1,7 @@
 {
   "name": "shogi-moves",
   "description": "Shogi move generation/validation & piece placement/movement.",
-  "version": "0.1.29",
+  "version": "0.1.30",
   "repository": "https://github.com/wirelineio/shogi",
   "main": "dist/index.js",
   "dependencies": {
@@ -35,5 +35,5 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "gitHead": "3d68ee1ba31c79592bc8b16fd68ffab827bb1f1e"
+  "gitHead": "90b79b975b3e99c717ee7fc5cb585d45f6541314"
 }
