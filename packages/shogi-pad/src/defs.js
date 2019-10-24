@@ -3,7 +3,7 @@
 //
 
 import Icon from '@material-ui/icons/Layers';
-import { red } from '@material-ui/core/colors';
+import red from '@material-ui/core/colors/red';
 
 export default {
   title: '将義',
