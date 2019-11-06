@@ -40,7 +40,7 @@
     "clean:conf": "rm -f ./service.yml",
     "build": "NODE_ENV=production babel ./src --out-dir ./dist --ignore \"**/*.test.js\"",
     "start": "wire bot run -v",
-    "debug": "WIRE_SIGNALHUB=http://localhost:4000 yarn start",
+    "debug": "WIRE_SIGNAL_ENDPOINT=http://localhost:4000 yarn start",
     "test": "jest --silent --passWithNoTests"
   },
   "gitHead": "3161a11fcfdabe7ffc035e6b6be1f60f7576dac6"
